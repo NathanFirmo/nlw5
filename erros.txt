@@ -1,0 +1,1 @@
+Problems loading reference 'https://json.schemastore.org/package': Unable to load schema from 'https://json.schemastore.org/package': Request vscode/content failed unexpectedly without providing any details.
