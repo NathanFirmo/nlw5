@@ -8,7 +8,7 @@ interface IMessageCreate {
 }
 
 class MessagesService {
-    private messagesRepository: Repository<Message>
+    private messagesRepository: MessagesRepository
     constructor(){
         this.messagesRepository = getCustomRepository(MessagesRepository)
     }
@@ -20,7 +20,7 @@ class MessagesService {
             user_id
         })
 
-        await messagesRepository.save(message)
+        await this.messagesRepository.save(message)
         return message
     }
 

@@ -3,7 +3,7 @@ import { UsersRepository } from "../repositories/UsersRepository"
 
 
 class UsersService {
-    private usersRepository: Repository<User>
+    private usersRepository: UsersRepository
     constructor() {
         this.usersRepository = getCustomRepository(UsersRepository)
     }
