@@ -3,6 +3,9 @@ import { UsersRepository } from "../repositories/UsersRepository"
 
 
 class UsersService {
+    findByEmail(email: any) {
+        return ""
+    }
     private usersRepository: UsersRepository
     constructor() {
         this.usersRepository = getCustomRepository(UsersRepository)

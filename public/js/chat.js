@@ -1,27 +1,27 @@
-document.querySelector('#start_chat').addEventListener('click', event => {
-  const chat_help = document.getElementById('chat_help');
-  chat_help.style.display = 'none';
+document.querySelector('#start_chat').addEventListener('click', (event) => {
+  const socket = io()
 
-  const chat_in_support = document.getElementById('chat_in_support');
-  chat_in_support.style.display = 'block';
+  const chat_help = document.querySelector('#chat_help')
+  chat_help.style.display = "none"
 
-  const socket = io();
+  const chat_in_support = document.querySelector('#chat_in_support')
+  chat_in_support.style.display = "block"
 
-  const email = document.getElementById('email').value;
-  const text = document.getElementById('txt_help').value;
+  const email = document.querySelector('#email').value
+  const text = document.querySelector('#txt_help').value
 
-  socket.on('connect', () => {
+  socket.on("connect", () => {
     const params = {
       email,
-      text,
-    };
+      text
+    }
 
-    socket.emit('client_first_access', params, (call, err) => {
-      if (err) {
-        console.err(err);
+    socket.emit("client_first_acess", params, (callback, error) => {
+      if (error) {
+        console.log(error)
       } else {
-        console.log(call);
+        console.log(callback)
       }
-    });
-  });
-});
+    })
+  })
+})
