@@ -1,11 +1,16 @@
 import { getCustomRepository, Repository } from "typeorm"
+import { SettingsRepository } from "../repositories/SettingsRepository"
 import { UsersRepository } from "../repositories/UsersRepository"
 
 
 class UsersService {
-    findByEmail(email: any) {
-        return ""
+    SettingsRepository: any
+    
+    async findByEmail(email: string) {
+        const bugfix = await this.SettingsRepository.findOne({ email })
+        return bugfix
     }
+
     private usersRepository: UsersRepository
     constructor() {
         this.usersRepository = getCustomRepository(UsersRepository)
