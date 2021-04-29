@@ -2,7 +2,6 @@ import { io } from "../http";
 import { ConnectionsService } from "../services/ConnectionsService"
 import { UsersService } from "../services/UsersService";
 import { MessagesService } from "../services/MessagesService";
-import { stringify } from "uuid";
 
 interface IParams{
     text: string
@@ -28,6 +27,7 @@ io.on("connect", (socket) => {
                 socket_id,
                 user_id: user.id
             })
+            user_id = user.id
         } else {
             user_id = userExists.id
             const connection = await connectionsService.findByUserId(userExists.id)
@@ -42,8 +42,8 @@ io.on("connect", (socket) => {
             }
         }
         await messagesService.create({
-            text:,
-            user_id:
+            text,
+            user_id            
         })
     })
 })
