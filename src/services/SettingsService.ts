@@ -28,7 +28,7 @@ class SettingsService {
         return setting
     }
 
-    async findByUsername(username: string) {    
+    async findByUsername(username: string) {
         const settings = await this.settingsRepository.findOne({
             username,
         })
