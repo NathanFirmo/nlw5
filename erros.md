@@ -2,7 +2,7 @@
 
 Precisa consertar a chamada para função do findByEmail. ok
 
-importação do io no admin.on
+importação do io no admin.on ok
 
 ## Doing
 

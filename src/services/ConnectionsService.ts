@@ -10,7 +10,7 @@ interface IConnectionsCreate {
 }
 
 class ConnectionsService {
-    private connectionsRepository: Repository<Connection>
+    private connectionsRepository: ConnectionsRepository
     constructor() {
         this.connectionsRepository = getCustomRepository(ConnectionsRepository)
     }
@@ -25,7 +25,7 @@ class ConnectionsService {
         await this.connectionsRepository.save(connetion)
     }
     async findByUserId(user_id: string){
-        const connection = await this.connectionsRepository.findOne({ user_id })
+        const connection = this.connectionsRepository.findOne({ user_id })
         return connection
     }
 
@@ -34,10 +34,11 @@ class ConnectionsService {
             where: {admin_id: null},
             relations: ["user"]
         })
+        return connetions
     }
 
     async findBySocketID(socket_id: string) {
-        const connection = await this.connectionsRepository.findOne({
+        const connection = this.connectionsRepository.findOne({
             socket_id
         })
 
@@ -45,7 +46,11 @@ class ConnectionsService {
     }
 
     async updateAdminID(user_id: string, admin_id:string) {
-        await this.connectionsRepository.createQueryBuilder().update(Connection).set({ admin_id }).where("user_id = :user_id", { user_id }).execute()
+        await this.connectionsRepository
+        .createQueryBuilder()
+        .update(Connection).set({ admin_id })
+        .where("user_id = :user_id", { user_id })
+        .execute()
     }
 }
 
