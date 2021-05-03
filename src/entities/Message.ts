@@ -1,6 +1,13 @@
-import { Entity, PrimaryColumn, CreateDateColumn, Column, JoinColumn, ManyToOne } from "typeorm";
+import {
+    Entity,
+    PrimaryColumn,
+    CreateDateColumn,
+    Column,
+    JoinColumn,
+    ManyToOne
+}
+from "typeorm";
 import { v4 as uuid } from "uuid";
-import { UsersController } from "../controllers/UsersController";
 import { User } from "./User";
 
 @Entity("messages")
@@ -12,14 +19,14 @@ class Message {
     admin_id: string
 
     @Column()
-    text: string
-
-    @JoinColumn({ name: "user_id" })
-    @ManyToOne(() => User)
-    user: User
-
-    @Column()
     user_id: string
+
+    @ManyToOne(() => User)
+    @JoinColumn({ name: "user_id" })
+    user: User
+    
+    @Column()
+    text: string
 
     @CreateDateColumn()
     created_at: Date

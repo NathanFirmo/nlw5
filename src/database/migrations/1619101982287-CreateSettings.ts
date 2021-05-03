@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateSettings1618924278826 implements MigrationInterface {
 
@@ -19,17 +19,17 @@ export class CreateSettings1618924278826 implements MigrationInterface {
                     {
                         name: "chat",
                         type: "boolean",
-                    default: true
+                        default: true
                     },
                     {
-                        name: "update_at",
+                        name: "created_at",
                         type: "timestamp",
-                    default: "now()"
+                        default: "now()"
                     },
                     {
-                        name: "created_at" ,
+                        name: "updated_at",
                         type: "timestamp",
-                    default: "now()"
+                        default: "now()"
                     },
                 ],
             })

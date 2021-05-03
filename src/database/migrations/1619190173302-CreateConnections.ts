@@ -29,7 +29,12 @@ export class CreateConnections1619190173302 implements MigrationInterface {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
-                    }
+                    },
+                    {
+                        name: 'updated_at',
+                        type: 'timestamp',
+                        default: 'now()',
+                      },
                 ]
             })
         );
@@ -41,7 +46,7 @@ export class CreateConnections1619190173302 implements MigrationInterface {
                 referencedColumnNames: ["id"],
                 columnNames: ["user_id"],
                 onDelete: "SET NULL",
-                onUpdate: "SET NULL",
+                onUpdate: "CASCADE",
             })
         )
     }

@@ -18,15 +18,15 @@ class Connection {
     @Column()
     admin_id: string
 
+    @Column()
+    user_id: string
+
     @ManyToOne(() => User)
     @JoinColumn({ name: "user_id" })
     user: User
 
     @Column()
     socket_id: string
-
-    @Column()
-    user_id: string
 
     @CreateDateColumn()
     created_at: Date
