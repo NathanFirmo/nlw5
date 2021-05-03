@@ -1,4 +1,4 @@
-import io from "../http"
+import { io } from "../http"
 import { ConnectionsService } from "../services/ConnectionsService"
 import { MessagesService } from "../services/MessagesService"
 

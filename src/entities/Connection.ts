@@ -1,6 +1,13 @@
-import { Entity, PrimaryColumn, CreateDateColumn, Column, JoinColumn, ManyToOne, UpdateDateColumn, EntityRepository } from "typeorm";
-import { v4 as uuid } from "uuid";
-import { UsersController } from "../controllers/UsersController";
+import {
+    Entity,
+    PrimaryColumn,
+    CreateDateColumn,
+    Column,
+    JoinColumn,
+    ManyToOne,
+    UpdateDateColumn,
+} from "typeorm";
+import { v4 as uuidV4 } from "uuid";
 import { User } from "./User";
 
 @Entity("connections")
@@ -12,14 +19,14 @@ class Connection {
     admin_id: string
 
     @Column()
-    socket_id: string
+    user_id: string
 
-    @JoinColumn({ name: "user_id" })
     @ManyToOne(() => User)
+    @JoinColumn({ name: "user_id" })
     user: User
 
     @Column()
-    user_id: string
+    socket_id: string
 
     @CreateDateColumn()
     created_at: Date
@@ -29,7 +36,7 @@ class Connection {
 
     constructor() {
         if (!this.id) {
-            this.id = uuid()
+            this.id = uuidV4()
         }
     }
 }

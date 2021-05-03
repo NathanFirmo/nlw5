@@ -15,8 +15,12 @@ app.get("/", (request, response) => {
     return response.render("html/client.html")
 })
 
-const http = createServer(app) //Protocolo HTTP
-const io = new Server(http) //Protocolo WS
+app.get("/admin", (request, response) => {
+    return response.render("html/admin.html")
+})
+
+const http = createServer(app) 
+const io = new Server(http) 
 
 
 io.on("connection", (socket: Socket) => {

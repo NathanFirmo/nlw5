@@ -19,8 +19,8 @@ class SettingsController {
     const {username} = request.params
 
     const settingsService = new SettingsService()
-    const settings = await settingsService.findByUsername(username)
-    return response.json(settings)
+    const setting = await settingsService.findByUsername(username)
+    return response.json(setting)
   }
 
   async update (request: Request, response: Response) {
@@ -28,8 +28,8 @@ class SettingsController {
     const { chat } = request.body
 
     const settingsService = new SettingsService()
-    const settings = await settingsService.update(username, chat)
-    return response.json(settings)
+    await settingsService.update(username, chat)
+    return response.send()
   }
 }
 
