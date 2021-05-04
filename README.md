@@ -2,8 +2,31 @@
 
  - See in [English 🇬🇧](./README-en-US.md).
 
-Esse é um projeto de back-end em Node.js, desenvolvido durante a quinta edição do NLW da [@rocketseat](https://github.com/Rocketseat).
-Esse projeto é ótimo para deenvolver as stacks de TypeScript, Node.js e TypeORM. 
+![IMG_3899](https://user-images.githubusercontent.com/79997705/117035560-d4532980-acda-11eb-8c67-e7d221a6e8eb.gif)
+
+***
+## Descrição
+
+Esse projeto de chat foi desenvolvido em Node.js, durante a quinta edição do NLW da [@rocketseat](https://github.com/Rocketseat).
+Foi usado TypeScript no backend, já no para o banco de dados, foi usado TypeORM com Sqlite. A conexão entre os usuário do chat é feita com WebSocket.
+
+## Instalação
+
+Abra o terminal e execute os seguintes comandos:
+
+```
+git clone https://github.com/NathanFirmo/support-chat.git
+```
+
+```
+cd support-chat
+```
+
+```
+yarn dev
+
+```
+Após isso, basta acessar a [página do cliente](http://localhost:3333/) e a [páginado atendente](http://localhost:3333/admin).
 
  ## Linguagens da aplicação
  
