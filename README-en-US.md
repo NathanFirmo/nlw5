@@ -7,8 +7,8 @@
 ***
 ## Description
 
-This chat project was developed in Node.js, during the fifth edition of [@rocketseat] NLW (https://github.com/Rocketseat).
-TypeScript was used for the backend, while for the database, TypeORM was used with Sqlite. The connection between the chat users is made with WebSocket.
+This chat project was developed in Node.js, during the fifth edition of [@rocketseat](https://github.com/Rocketseat) NLW.
+TypeScript was used for the backend, while for the database I use TypeORM and Sqlite. The connection between the chat users is made with WebSocket.
 
 ## Installation
 
@@ -26,7 +26,7 @@ cd support-chat
 yarn dev
 
 ```
-After that, just access the [client page] (http: // localhost: 3333 /) and the [page attendant] (http: // localhost: 3333 / admin).
+After that, just access the [client page](http://localhost:3333/) and the [attendant page](http://localhost:3333/admin).
 
  ## Application languages
  
