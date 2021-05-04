@@ -1,4 +1,4 @@
- # **Chat de suporte**
+ # **Support Chat**
 
 - Ver em [Português 🇧🇷](./README.md).
 
