@@ -4,4 +4,4 @@ node_modules/
 build/
 tmp/
 temp/
-2public/
+src/database/database.sqlite
