@@ -35,6 +35,7 @@ Após isso, basta acessar a [página do cliente](http://localhost:3333/) e a [p�
 ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
+> Status do Projeto: Concluido :heavy_check_mark:
 ***
  ![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) 
  
